@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <script>
+            function getName()
+             { 
+                 let Tag="",InPhrase="";
+                debugger;
+                    const Name1=document.getElementById('txt1').value;
+                    const Salute=document.getElementById('dd').value
+                    if(Salute==="Male")
+                    {
+                        Tag="Mr";
+                        InPhrase="He";
+
+                    }
+                  else if(Salute=="FeMale")
+                    {
+                        Tag="Miss.";
+                        InPhrase="She";
+
+                    }
+
+                 ConcateEs6(Name1,Tag,InPhrase); 
+
+             }
+             function ConcateEs6(Name1,Tag,InPhrase)
+             {  
+                
+
+                lbl1.innerHTML=`${Tag} ${Name1}, ${InPhrase} is been a member of Incapsulate Corporations`
+                
+             } 
+    
+    </script>
+</head>
+<body align="center">
+    <br><br>
+
+    Name 1:<input type="text" id="txt1" oninput="getName()"> <br><br>
+    <select id="dd" onclick="getName()">
+        <option value=" ">Select Salutation</option>
+        <option value="Male">Male</option>
+        <option value="FeMale">Female</option>
+        </select>
+ <br><br>
+    <label id="lbl1" ></label>
+</body>
+</html>
