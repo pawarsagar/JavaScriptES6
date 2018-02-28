@@ -1,50 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-   
+
     <script>
-            function getName()
-             { 
-                 let Tag="",InPhrase="";
-                debugger;
-                    const Name1=document.getElementById('txt1').value;
-                    const Salute=document.getElementById('dd').value
-                    if(Salute==="Male")
-                    {
-                        Tag="Mr";
-                        InPhrase="He";
+        function getName() {
+            let Tag = "", InPhrase = "";
+            debugger;
+            const Name1 = document.getElementById('txt1').value;
+            const Salute = document.getElementById('dd').value
 
-                    }
-                  else if(Salute=="FeMale")
-                    {
-                        Tag="Miss.";
-                        InPhrase="She";
+            ConcateEs6(Name1, Salute);
 
-                    }
+        }
+        function ConcateEs6(Name1, Salute) {
 
-                 ConcateEs6(Name1,Tag,InPhrase); 
+            lbl1.innerHTML = `${Salute == "Male" ? "Mr" : Salute == "" ? " " : "Mrs"} ${Name1} is been a member of Incapsulate Corporations`
+        }
 
-             }
-             function ConcateEs6(Name1,Tag,InPhrase)
-             {  
-                
-
-                lbl1.innerHTML=`${Tag} ${Name1}, ${InPhrase} is been a member of Incapsulate Corporations`
-                
-             } 
-    
     </script>
 </head>
-<body align="center">
-    <br><br>
 
-    Name 1:<input type="text" id="txt1" oninput="getName()"> <br><br>
+<body align="center">
+    <br>
+    <br> Name 1:
+    <input type="text" id="txt1" onkeyup="getName()">
+    <br>
+    <br>
     <select id="dd" onclick="getName()">
-        <option value=" ">Select Salutation</option>
+        <option value="">Select Salutation</option>
         <option value="Male">Male</option>
         <option value="FeMale">Female</option>
-        </select>
- <br><br>
-    <label id="lbl1" ></label>
+    </select>
+    <br>
+    <br>
+    <label id="lbl1"></label>
+
 </body>
+
 </html>
