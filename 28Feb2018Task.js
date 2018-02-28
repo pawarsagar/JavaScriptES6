@@ -21,8 +21,8 @@ function myFunctionDemo(ObjectDetails) {
 
 var ObjectDetails = {
     age: 22,
-    firstName: 'John',
-    lastName: 'Doe',
+    firstName: 'Peter',
+    lastName: 'Parker',
     gender: 'Male'
 }
 console.log(myFunctionDemo(ObjectDetails));
