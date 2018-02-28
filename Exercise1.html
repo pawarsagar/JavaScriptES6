@@ -5,7 +5,7 @@
     <script>
             function getName()
              {
-                debugger;
+                
                     const Name1=document.getElementById('txt1').value;
                     const Name2=document.getElementById('txt2').value
 
@@ -14,7 +14,7 @@
              }
              function ConcateEs6(Name1,Name2, DefaultName="Amrit",DefaultName1="Sagar")
              {
-                 debugger;
+                
                 // lbl1.innerHTML=`${Name1} and ${Name2===""?`${DefaultName}`:`${Name2}`} are working together`;
                  lbl1.innerHTML =  ` ${Name1===""?`${DefaultName1} and ${Name2===""?` ${DefaultName}`:`${Name2}`} are working together in incapsulate`:`${Name2==="" ?`${Name1} and ${DefaultName} are working together in incapsulate` :`${Name1} and ${Name2} are working together in incapsulate`} `}  `;
              }
