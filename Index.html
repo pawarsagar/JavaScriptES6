@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script type="text/javascript">
+
+
+        function getDetails() {
+            fetch('https://jsonplaceholder.typicode.com/users/1')
+                .then(
+                (response) => {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' + response.status);
+                        return;
+                    }
+
+
+                    response.json().then((DataDetails) => {
+
+                        document.getElementById("labelName").innerHTML = DataDetails.name;
+                        document.getElementById("UserName").innerHTML = DataDetails.username;
+                        document.getElementById("Email").innerHTML = DataDetails.email;
+                        document.getElementById("Street").innerHTML = DataDetails.address.street;
+                        document.getElementById("Suite").innerHTML = DataDetails.address.suite;
+                        document.getElementById("city").innerHTML = DataDetails.address.city;
+                        document.getElementById("ZipCode").innerHTML = DataDetails.address.zipcode;
+                        document.getElementById("GeoLAt").innerHTML = DataDetails.address.geo.lat;
+                        document.getElementById("GeoLng").innerHTML = DataDetails.address.geo.lng;
+                        document.getElementById("Phone").innerHTML = DataDetails.phone;
+                        document.getElementById("Website").innerHTML = DataDetails.website;
+                        document.getElementById("Company").innerHTML = DataDetails.company.name;
+                        document.getElementById("Catch").innerHTML = DataDetails.company.catchPhrase;
+                        document.getElementById("BM").innerHTML = DataDetails.company.bs;
+
+                        var form = document.getElementById("form1");
+                        form.style.visibility = "visible";
+
+                    });
+                }
+                )
+                .catch((err) => {
+                    console.log('Fetch Error :-S', err);
+                });
+
+
+
+
+        }
+
+
+
+
+    </script>
+</head>
+
+<body onload="getDetails()" align="center">
+    <form id="form1" onload="getDetails()">
+      <table align="center" style="width: 50%;">
+            <thead align="center">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <td>
+                        <label id="labelName"> </label>
+                    </td>
+                </tr>
+                <th>
+                    UserName
+                </th>
+                <td>
+                    <label id="UserName"> </label>
+                </td>
+                </tr>
+                <th>
+                    Email
+                </th>
+                <td>
+                    <label id="Email"> </label>
+                </td>
+                </tr>
+                <th>
+                    Street
+                </th>
+                <td>
+                    <label id="Street"> </label>
+                </td>
+                </tr>
+                <th>
+                    Suite
+                </th>
+                <td>
+                    <label id="Suite"> </label>
+                </td>
+                </tr>
+                <th>City</th>
+                <td>
+                    <label id="city"> </label>
+                </td>
+                </tr>
+                <th>
+                    ZipCode
+                </th>
+                <td>
+                    <label id="ZipCode"> </label>
+                </td>
+                </tr>
+                <th>
+                    Geo Lattitude
+                </th>
+                <td>
+                    <label id="GeoLAt"> </label>
+                </td>
+                </tr>
+                <th>
+                    Geo Longitude
+                </th>
+                <td>
+                    <label id="GeoLng"> </label>
+                </td>
+                </tr>
+                <th>
+                    Phone
+                </th>
+                <td>
+                    <label id="Phone"> </label>
+                </td>
+                </tr>
+                <th>
+                    Website
+                </th>
+                <td>
+                    <label id="Website"> </label>
+                </td>
+                </tr>
+                <th>
+                    Company name
+                </th>
+                <td>
+                    <label id="Company"> </label>
+                </td>
+                </tr>
+                <th>
+                    Catch Phrase
+                </th>
+                <td>
+                    <label id="Catch"> </label>
+                </td>
+                </tr>
+                <th>
+                    Bussines Module
+                </th>
+                <td>
+                    <label id="BM"> </label>
+                </td>
+                </tr>
+                </tr>
+            </thead>
+                </table>
+                
+</body>
+</html>
