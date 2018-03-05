@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        let greetingsPromise = () => {
+            let Name = document.getElementById("txtName").value;
+            const GM = 'Good Morning';
+            const GA = 'Good AfterNoon';
+            const GE = 'Good Evening';
+            const GN = 'Good Night';
+            let promise = new Promise((resolve, reject) => {
+                const now = new Date();
+                resolve(now)
+            }).then((now) => {
+                if (now.getHours() < 12) {
+                    alert(`${GM} ${Name},
+                    Hello Iam JavaScript, i will be your assitant for today, Have a nie Day`);;
+                }
+                else if (now.getHours() >= 12 && now.getHours() < 17) {
+                    alert(`${GA} ${Name}, 
+                    Have you done with your lunch?? 
+                    Mistress seems a good cook `);
+                }
+                else if (now.getHours() >= 17 && now.getHours() < 22) {
+                    alert(`${GE} ${Name} Yippeeee !! Coffee Time`);
+                }
+                else if (now.getHours() >= 22 && now.getHours() < 00) {
+                    alert(`${GN} ${Name} 
+                    (Yawning) Hope you had a good day, See you tomorrow `);
+                }
+            }) // this is test comment for github
+        };
+		
+    </script>
+</head>
+
+<body align="center">
+    <form id="form1" onload="getDetails()">
+        <input type="text" id="txtName" />
+        <button id="btnSubmit" type="submit" onclick="greetingsPromise()">Submit </button>
+</body>
+
+</html>
